@@ -1,0 +1,49 @@
+Analyzing and compiling sha1.c to sha1.o
+sha1.c:46:2: warning: Duplicate code detected [alpha.clone.CloneChecker]
+        for ( ; i < 40; ++i) {
+        ^~~~~~~~~~~~~~~~~~~~~~
+sha1.c:62:2: note: Similar code here
+        for ( ; i < 80; ++i) {
+        ^~~~~~~~~~~~~~~~~~~~~~
+sha1.c:131:2: warning: Duplicate code detected [alpha.clone.CloneChecker]
+        ctx->data[62] = ctx->bitlen >> 8;
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sha1.c:132:2: note: Similar code here
+        ctx->data[61] = ctx->bitlen >> 16;
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sha1.c:144:3: warning: Duplicate code detected [alpha.clone.CloneChecker]
+                hash[i + 4]  = (ctx->state[1] >> (24 - i * 8)) & 0x000000ff;
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sha1.c:145:3: note: Similar code here
+                hash[i + 8]  = (ctx->state[2] >> (24 - i * 8)) & 0x000000ff;
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+Compilation and analysis of sha1.c succeeded
+Analyzing and compiling sha256.c to sha256.o
+sha256.c:53:2: warning: Duplicate code detected [alpha.clone.CloneChecker]
+        a = ctx->state[0];
+        ^~~~~~~~~~~~~~~~~~
+sha256.c:54:2: note: Similar code here
+        b = ctx->state[1];
+        ^~~~~~~~~~~~~~~~~~
+sha256.c:75:2: warning: Duplicate code detected [alpha.clone.CloneChecker]
+        ctx->state[0] += a;
+        ^~~~~~~~~~~~~~~~~~~
+sha256.c:76:2: note: Similar code here
+        ctx->state[1] += b;
+        ^~~~~~~~~~~~~~~~~~~
+sha256.c:137:2: warning: Duplicate code detected [alpha.clone.CloneChecker]
+        ctx->data[62] = ctx->bitlen >> 8;
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sha256.c:138:2: note: Similar code here
+        ctx->data[61] = ctx->bitlen >> 16;
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sha256.c:150:3: warning: Duplicate code detected [alpha.clone.CloneChecker]
+                hash[i + 4]  = (ctx->state[1] >> (24 - i * 8)) & 0x000000ff;
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sha256.c:151:3: note: Similar code here
+                hash[i + 8]  = (ctx->state[2] >> (24 - i * 8)) & 0x000000ff;
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4 warnings generated.
+Compilation and analysis of sha256.c succeeded
+Compilation and static analysis completed.
